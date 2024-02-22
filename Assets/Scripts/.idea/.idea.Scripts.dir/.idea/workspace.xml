@@ -12,8 +12,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CameraController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/animationStateController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/animationStateController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -62,6 +62,8 @@
       <workItem from="1708517439905" duration="3233000" />
       <workItem from="1708521427604" duration="759000" />
       <workItem from="1708537293927" duration="1753000" />
+      <workItem from="1708542963307" duration="1247000" />
+      <workItem from="1708544583418" duration="535000" />
     </task>
     <servers />
   </component>
