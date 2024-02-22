@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour
 	    if (Input.GetKey(KeyCode.Space))
         {
             Jump();
+            anim.SetBool("isJumping", true); // Set the isJumping parameter to true
+            StartCoroutine(StopExpandingAfterSeconds(0.2f)); // Wait for 0.2 seconds
         }
     }
     
@@ -80,7 +82,7 @@ public class PlayerController : MonoBehaviour
 		   SetCountText(); // Update the count text
 
 			anim.SetBool("isEating", true); // Set the isJumping parameter to true
-	        StartCoroutine(StopEatingAfterSeconds(0.2f)); // Wait for 2 seconds
+	        StartCoroutine(StopEatingAfterSeconds(0.2f)); // Wait for 0.2 seconds
         
         }
 	}
@@ -91,4 +93,10 @@ public class PlayerController : MonoBehaviour
     	yield return new WaitForSeconds(seconds);
     	anim.SetBool("isEating", false);
 	}
+	
+	IEnumerator StopExpandingAfterSeconds(float seconds)
+    {
+    	yield return new WaitForSeconds(seconds);
+    	anim.SetBool("isJumping", false);
+    }
 }
