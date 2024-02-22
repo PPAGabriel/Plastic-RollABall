@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
 	public int count; // Number of pickups collected
 	public TextMeshProUGUI countText; // Reference to the count text
 	public GameObject winTextObject; // Reference to the win text
-	private Animator anim; // Reference to the animator component
-    
+	public Animator anim; // Reference to the animator component
+
     // Start is called before the first frame update
     void Start()
     {
