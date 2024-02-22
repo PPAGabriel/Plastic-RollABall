@@ -134,4 +134,60 @@ Además de cambiar el valor de nuestro parametro "isJumping" a True cuando el ju
 De esta manera conseguimos el siguiente resultado:
 ![img_9.png](Images%2Fimg_9.png)
 
-### 2. Animación del enemigo:
+### 2. Animación relativa a la cercanía del enemigo:
+
+Posteriormente, para  crear una animación que cambie el color de nuestro player. Usamos el siguiente propiedas: Mesh Renderer -> Material_BaseColor.
+
+![img_10.png](Images%2Fimg_10.png)
+
+De esta manera, al igual que en nuestra animación anterior, manipulamos los frames y los valores de tiempo y RGB para notar el cambio.
+
+Con respecto a nuestros estados, quedaría de la siguiente manera, junto a su parámetro booleano "isNear":
+
+![img_11.png](Images%2Fimg_11.png)
+
+A la hora de modificar el Script, se realizó la siguiente modificación:
+
+````csharp
+    private Transform target; // Reference to the player
+	private PlayerController playerController; // Reference to the player controller
+    private float distance=3.0f; // Distance between the enemy and the player
+    void Start()
+    {
+        pathfinder = GetComponent<NavMeshAgent>();
+        target = GameObject.Find("Player").transform;
+		playerController = target.GetComponent<PlayerController>();
+    }
+    void Update()
+    {
+		if (playerController.count >= 12) // Check if the player has collected all the pickups
+	    {
+		    pathfinder.isStopped = true; // Stop the enemy
+		}
+		else{
+        	pathfinder.SetDestination(target.position);
+		}
+		
+		//Check if the enemy is near the player
+        if (Vector3.Distance(target.position, transform.position) <= distance)
+        {
+            playerController.anim.SetBool("isNear", true); // Set the isNear parameter to true
+        }
+		        else
+        {
+            playerController.anim.SetBool("isNear", false); // Set the isNear parameter to false
+        }
+    }
+}
+````
+
+Considerando que el parámetro "anim" sea público en mi archivo PlayerController.cs, y respetando una distancia de 3.0f entre el enemigo y el jugador. Añadimos una condición en la cual, cuando el Vector distancia sea inferior o igual a la distancia establecida, el parámetro "isNear" cambie a True. De lo contrario, cambie a False.
+
+Como en nuestro caso, la acción de salto fue realizada por acciones de fuerza por tener su componente RigidBody y no de animación, trabajan de manera independiente en nuestro juego. Haciendo posible que ambas interacciones actúen a la vez (cambio de color y salto).
+
+![img_12.png](Images%2Fimg_12.png)
+
+***IMPORTANTE:*** No obstante, es importante entender que los estados no trabajan de manera paralela. Aunque puedas hacer subestados, estos transcurren uno a uno. Esto quiere decir que, si el salto fuese un estado en nuestro Animator Controller, no pueden haber 2 en 1 como ejecución.
+
+---
+## DALE UNA ESTRELLA A ESTE REPOSITORIO SI TE HA SERVIDO DE AYUDA! :sparkles:
