@@ -205,7 +205,7 @@ Como en nuestro caso, la acción de salto fue realizada por acciones de fuerza p
 
 ![gif_3.gif](GIFs%2Fgif_3.gif)
 
--El enemigo se detiene al recoger todos los bloques:
+- El enemigo se detiene al recoger todos los bloques:
 
 ![gif_4.gif](GIFs%2Fgif_4.gif)
 
