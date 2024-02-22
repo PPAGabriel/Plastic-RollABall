@@ -190,4 +190,20 @@ Como en nuestro caso, la acción de salto fue realizada por acciones de fuerza p
 ***IMPORTANTE:*** No obstante, es importante entender que los estados no trabajan de manera paralela. Aunque puedas hacer subestados, estos transcurren uno a uno. Esto quiere decir que, si el salto fuese un estado en nuestro Animator Controller, no pueden haber 2 en 1 como ejecución.
 
 ---
+
+### GIF'S DE DEMOSTRACIÓN:
+
+- Alerta de proximidad con el enemigo:
+![gif_1.gif](GIFs%2Fgif_1.gif)
+
+- Salto del jugador y expansión de su tamaño al saltar: 
+![gif_2.gif](GIFs%2Fgif_2.gif)
+
+- Animación al comer un bloque:
+![gif_3.gif](GIFs%2Fgif_3.gif)
+
+-El enemigo se detiene al recoger todos los bloques:
+![gif_4.gif](GIFs%2Fgif_4.gif)
+
+---
 ## DALE UNA ESTRELLA A ESTE REPOSITORIO SI TE HA SERVIDO DE AYUDA! :sparkles:
